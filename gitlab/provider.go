@@ -23,7 +23,7 @@ func Provider() terraform.ResourceProvider {
 			},
 			"private_token": {
 				Type:        schema.TypeString,
-				Required:    false,
+				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("GITLAB_PRIVATE_TOKEN", nil),
 				Description: descriptions["private token"],
 			},
