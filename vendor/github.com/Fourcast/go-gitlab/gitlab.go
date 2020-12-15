@@ -238,14 +238,16 @@ func NewOAuthClient(token string, options ...ClientOptionFunc) (*Client, error) 
 
 // NewMultipleAuthClient returns a new GitLab API client. To use API methods which
 // require authentication, provide a valid oauth token and private token.
-func NewMultipleAuthClient(oauthToken, privateToken string, options ...ClientOptionFunc) (*Client, error) {
+// token is used to set the 'PRIVATE-TOKEN' header
+// oauthToken is used to set the 'Authorization' header
+func NewMultipleAuthClient(token, oauthToken string, options ...ClientOptionFunc) (*Client, error) {
 	client, err := newClient(options...)
 	if err != nil {
 		return nil, err
 	}
 	client.authType = multiple
 	client.oauthToken = oauthToken
-	client.privateToken = privateToken
+	client.privateToken = token
 	return client, nil
 }
 

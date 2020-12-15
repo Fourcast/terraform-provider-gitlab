@@ -16,6 +16,8 @@ github.com/Fourcast/go-gitlab v0.38.1 h1:st5/Ag4h8CqVfp3LpOWW0Jd4jYHTGETwu0KksYD
 github.com/Fourcast/go-gitlab v0.38.1/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=
 github.com/Fourcast/go-gitlab v0.38.2-0.20201214144604-2645bde7b14f h1:GyX8AnTwp1KYAhHwWCGtrQ+KNzP30KOqVtHGxFBgG00=
 github.com/Fourcast/go-gitlab v0.38.2-0.20201214144604-2645bde7b14f/go.mod h1:EVdQbptP4e/eM6x+DSJyMdomHLMVD0TPZcKYM4wJLCw=
+github.com/Fourcast/go-gitlab v0.38.2-0.20201215083729-1834b0857172 h1:bo6CdOpiRpT5fw9F7XsciivwwA0W4tj/fXjHcct0yGk=
+github.com/Fourcast/go-gitlab v0.38.2-0.20201215083729-1834b0857172/go.mod h1:EVdQbptP4e/eM6x+DSJyMdomHLMVD0TPZcKYM4wJLCw=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/agext/levenshtein v1.2.2 h1:0S/Yg6LYmFJ5stwQeRp6EeOcCbj7xiqQSdNelsXvaqE=
 github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
