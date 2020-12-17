@@ -21,6 +21,12 @@ func Provider() terraform.ResourceProvider {
 				DefaultFunc: schema.EnvDefaultFunc("GITLAB_TOKEN", nil),
 				Description: descriptions["token"],
 			},
+			"bearer_token": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				DefaultFunc: schema.EnvDefaultFunc("GITLAB_BEARER_TOKEN", nil),
+				Description: descriptions["bearer token"],
+			},
 			"base_url": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -111,6 +117,8 @@ func init() {
 	descriptions = map[string]string{
 		"token": "The OAuth token used to connect to GitLab.",
 
+		"bearer_token": "The token used set the 'Authorization: bearer' header",
+
 		"base_url": "The GitLab Base API URL",
 
 		"cacert_file": "A file containing the ca certificate to use in case ssl certificate is not from a standard chain",
@@ -125,12 +133,13 @@ func init() {
 
 func providerConfigure(p *schema.Provider, d *schema.ResourceData) (interface{}, error) {
 	config := Config{
-		Token:      d.Get("token").(string),
-		BaseURL:    d.Get("base_url").(string),
-		CACertFile: d.Get("cacert_file").(string),
-		Insecure:   d.Get("insecure").(bool),
-		ClientCert: d.Get("client_cert").(string),
-		ClientKey:  d.Get("client_key").(string),
+		Token:       d.Get("token").(string),
+		BearerToken: d.Get("bearer_token").(string),
+		BaseURL:     d.Get("base_url").(string),
+		CACertFile:  d.Get("cacert_file").(string),
+		Insecure:    d.Get("insecure").(bool),
+		ClientCert:  d.Get("client_cert").(string),
+		ClientKey:   d.Get("client_key").(string),
 	}
 
 	client, err := config.Client()
