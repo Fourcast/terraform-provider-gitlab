@@ -76,7 +76,7 @@ func (c *Config) Client() (*gitlab.Client, error) {
 	if c.Token != "" && c.PrivateToken != "" {
 		client, err = gitlab.NewMultipleAuthClient(c.Token, c.PrivateToken, opts...)
 	} else {
-		client, err = gitlab.NewClient(c.Token, opts...)
+		client, err = gitlab.NewClient(c.PrivateToken, opts...)
 	}
 
 	if err != nil {
